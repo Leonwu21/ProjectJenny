@@ -1,14 +1,37 @@
-<html>
-  <head>
-    <title>Jenny</title>
-  </head>
-  <body>
-    <form>
-      <div id="login">
-        <input type="text" id="username" placeholder="username" />
-        <input type="password" id="password" placeholder="password" />
-        <input type="submit" value="Go" />
-      </div>
-    </form>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Login</title>
+  <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBBvT9VwuC8jMbqZfZZ1yjeh8iL9bLm_Q0",
+      authDomain: "project-jenny.firebaseapp.com",
+      databaseURL: "https://project-jenny.firebaseio.com",
+      projectId: "project-jenny",
+      storageBucket: "project-jenny.appspot.com",
+      messagingSenderId: "7218289748",
+      appId: "1:7218289748:web:1ac714c0118d7211a1e1c1",
+      measurementId: "G-18JZDJ24EV"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+</body>
+
 </html>
