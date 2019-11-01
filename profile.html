@@ -4,11 +4,46 @@
 <head>
   <meta charset="utf-8">
   <title>Profile Page</title>
+  <style>
+    #pHeader {
+      text-align: center;
+    }
+
+    #profileLogo {
+      float: left;
+    }
+
+    #hamburger {
+      float: right;
+    }
+
+    #content {
+      height: 80vmax;
+    }
+
+    .footerDivs {
+      display: inline-block;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Welcome, user!</h1>
-  <h2>This is your profile page!</h2>
+  <header>
+    <div id="divHeader">
+      <div id="profileLogo">circle</div>
+      <div id="hamburger">burger</div>
+      <p id="pHeader">Profile</p>
+    </div>
+  </header>
+  <div id="content"></div>
+  <footer>
+    <div id="footer">
+      <div id="home" class="footerDivs">home</div>
+      <div id="search" class="footerDivs">search</div>
+      <div id="notif" class="footerDivs">notif</div>
+      <div id="prof" class="footerDivs">prof</div>
+    </div>
+  </footer>
 </body>
 
 </html>
