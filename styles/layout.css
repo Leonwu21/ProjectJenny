@@ -1,0 +1,19 @@
+    #pHeader {
+      text-align: center;
+    }
+
+    #profileLogo {
+      float: left;
+    }
+
+    #hamburger {
+      float: right;
+    }
+
+    #content {
+      height: 80vmax;
+    }
+
+    .footerDivs {
+      display: inline-block;
+    }
