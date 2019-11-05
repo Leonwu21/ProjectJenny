@@ -40,7 +40,7 @@ header {
 footer {
     background-color: #a8d0e6;
     height: 70px;
-    position: sticky;
+    position: fixed;
     bottom: 0;
 }
 
