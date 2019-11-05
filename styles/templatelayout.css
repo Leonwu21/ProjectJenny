@@ -1,6 +1,6 @@
 /* header */
 header {
-    background-color: #a8d0e6;
+    background-color: #25274D;
     height: 70px;
     position: sticky;
     top: 0;
@@ -38,7 +38,7 @@ header {
 
 /* footer */
 footer {
-    background-color: #a8d0e6;
+    background-color: #25274D;
     height: 70px;
     width: 100%;
     position: fixed;
@@ -69,5 +69,5 @@ footer {
 
 .navItem {
     text-align: center;
-    font-size: 30px;
+    color: white;
 }
