@@ -1,36 +1,59 @@
 /* header */
+
+body {
+    margin: 0;
+}
 header {
-    background-color: #a8d0e6;
-    height: 70px;
+    background-color: #25274D;
+    height: 10vmax;
+    width: 100%;
     position: sticky;
     top: 0;
     display: grid;
+    grid-template-columns: 20vw 60vw 20vw;
+    color: white;
 }
 
 /* header items */
 
-#menu {
-    grid-column: 1;
-    text-align: center;
+#burger-menu {
+    grid-column: 1 / span 1;
+    display: table;
+    text-align: left;
+    height: 100%;
+    padding-left: 2vw;
+}
+
+#burger-menu h1 {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #titleContainer {
-    font-size: 40px;
-    text-align: center;
-    grid-column: 2/ span 2;
-}
-
-#title {
+    display: table;
+    grid-column: 2 / span 1;
     color: #eeeeee;
     height: 100%;
-}
-
-#settings {
-    grid-column: 4;
     text-align: center;
 }
 
+#titleContainer h1 {
+    display: table-cell;
+    vertical-align: middle;
+}
 
+#search-bar {
+    grid-column: 3 / span 1;
+    display: table;
+    height: 100%;
+    text-align: right;
+    padding-right: 4vw;
+}
+
+#search-bar h1 {
+    display: table-cell;
+    vertical-align: middle;
+}
 /* maincontent */
 #content {
     height: 736px;
