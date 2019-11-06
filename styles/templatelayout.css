@@ -1,7 +1,7 @@
 /* header */
 header {
     background-color: #25274D;
-    height: 70px;
+    height: 8vmax;
     position: sticky;
     top: 0;
     display: grid;
@@ -15,7 +15,7 @@ header {
 }
 
 #titleContainer {
-    font-size: 40px;
+    font-size: 6vmax;
     text-align: center;
     grid-column: 2/ span 2;
 }
@@ -33,17 +33,60 @@ header {
 
 /* maincontent */
 #content {
-    height: 736px;
+    height: 80vmax;
+    background-color: #2E9CCA;
 }
 
+#welcome {
+    height: 9vmax;
+    background-color: #464866;
+    color: white;
+    font-size: 5vmax;
+    display: flex;
+    justify-content: center;
+
+}
+
+#imageBox {
+  height: 30vmax;
+  background-color: #AAABB8;
+  margin: 2vmax;
+}
+
+.newGroup {
+  display: flex;
+  justify-content: center;
+  padding: 4vmax 0 0;
+}
+
+.groupBox {
+  display: inline-block;
+  height: 7vmax;
+  width: 20vmax;
+  background-color: #AAABB8;
+  border-radius: 5px;
+}
+
+.join {
+  display: inline-block;
+  text-align: center;
+  color: white;
+  background-color: #29648A;
+  height: 5.5vmax;
+  font-size: 3vmax;
+  padding: 1vmax;
+  width: 12vmax;
+  margin-left: 5vmax;
+  border-radius: 20px;
+}
 /* footer */
-footer {
+/* footer {
     background-color: #25274D;
     height: 70px;
     width: 100%;
     position: fixed;
     bottom: 0;
-}
+} */
 
 /* navigation */
 #navi {
