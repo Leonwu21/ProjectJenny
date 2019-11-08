@@ -9,19 +9,19 @@ header {
     width: 100%;
     position: sticky;
     top: 0;
-    display: grid;
-    grid-template-columns: 20vw 60vw 20vw;
+    display: flex;
+    justify-content: space-between;
     color: white;
 }
 
 /* header items */
 
 #burger-menu {
-    grid-column: 1 / span 1;
     display: table;
     text-align: left;
     height: 100%;
     padding-left: 2vw;
+    font-size: xx-large;
 }
 
 #burger-menu h1 {
@@ -31,10 +31,10 @@ header {
 
 #titleContainer {
     display: table;
-    grid-column: 2 / span 1;
     color: #eeeeee;
     height: 100%;
     text-align: center;
+    font-size: xx-large;
 }
 
 #titleContainer h1 {
@@ -43,11 +43,11 @@ header {
 }
 
 #search-bar {
-    grid-column: 3 / span 1;
     display: table;
     height: 100%;
     text-align: right;
     padding-right: 4vw;
+    font-size: xx-large;
 }
 
 #search-bar h1 {
