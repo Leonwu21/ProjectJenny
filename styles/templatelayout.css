@@ -60,6 +60,7 @@ header {
     background-color: #2E9CCA;
 }
 
+/* div for welcome message. */
 #welcome {
     height: 9vmax;
     background-color: #464866;
@@ -70,6 +71,7 @@ header {
 
 }
 
+/* div for content box */
 #imageBox {
   height: 30vmax;
   background-color: #AAABB8;

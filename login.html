@@ -17,7 +17,18 @@
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link type="text/css" rel="stylesheet" href="styles/templatelayout.css" />
+  <style>
+    #content {
+      padding-top: 10vmax;
+    }
 
+    #signUp {
+      text-align: center;
+      font-size: 4vmax;
+      color: white;
+    }
+  </style>
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -37,9 +48,16 @@
 </head>
 
 <body>
-  <h1>Welcome to Project Jenny App</h1>
-  <div id="firebaseui-auth-container"></div>
-  <div id="loader">Loading...</div>
+  <header>
+    <div id=#titleContainer></div>
+  </header>
+  <div id="content">
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+    <div id="signUpDiv">
+      <p id="signUp">Don't have an account yet?<br /><a href="signup.html">Sign in</a></p>
+    </div>
+  </div>
 
   <script>
     // Initialize the FirebaseUI Widget using Firebase.
@@ -71,9 +89,9 @@
         // firebase.auth.PhoneAuthProvider.PROVIDER_ID
       ],
       // Terms of service url.
-      tosUrl: '<main.html>',
+      tosUrl: '<index.html>',
       // Privacy policy url.
-      privacyPolicyUrl: '<main.html>'
+      privacyPolicyUrl: '<index.html>'
     };
 
     // The start method will wait until the DOM is loaded.
