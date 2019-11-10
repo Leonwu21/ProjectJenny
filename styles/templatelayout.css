@@ -3,7 +3,8 @@
 body {
     margin: 0;
 }
-header {
+
+#header {
     background-color: #25274D;
     height: 10vmax;
     width: 100%;
@@ -24,22 +25,12 @@ header {
     font-size: xx-large;
 }
 
-#burger-menu h1 {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 #titleContainer {
     display: table;
     color: #eeeeee;
     height: 100%;
     text-align: center;
     font-size: xx-large;
-}
-
-#titleContainer h1 {
-    display: table-cell;
-    vertical-align: middle;
 }
 
 #search-bar {
@@ -50,10 +41,6 @@ header {
     font-size: xx-large;
 }
 
-#search-bar h1 {
-    display: table-cell;
-    vertical-align: middle;
-}
 /* maincontent */
 #content {
     height: 80vmax;
