@@ -1,0 +1,82 @@
+/* ELEMENT SELECTOR */
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  color: #ffffff;
+}
+
+
+/* ID's */
+
+
+/* header container */
+
+#header {
+  background-color: #25274D;
+  color: #ffffff;
+  width: 100%;
+  height: auto;
+}
+
+
+/* subcontainer 1 */
+
+#hcont1 {
+  display: flex;
+  z-index: 2;
+  justify-content: space-between;
+  padding: 5px;
+  height: 50%;
+}
+
+#ico1 {
+  background-image: url("../resources/icons/burgermenu.png");
+  background-size: cover;
+}
+
+#title {
+  text-align: center;
+  font-size: xx-large;
+}
+
+#ico2 {
+  background-image: url("../resources/icons/search.png");
+  background-size: cover;
+}
+
+
+/* subcontainer 2 */
+
+#hcont2 {
+  background-color: #464866;
+  z-index: 1;
+  text-align: center;
+  font-size: xx-large;
+  padding: 5px;
+  height: 50%;
+}
+
+
+/* content container */
+
+#content {
+  background-color: #2E9CCA;
+  height: 90vmax;
+  overflow: hidden;
+}
+
+
+/* CLASSES */
+
+.center-obj {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  height: 100%;
+  width: auto;
+  min-width: 50px;
+  min-height: 50px;
+}
