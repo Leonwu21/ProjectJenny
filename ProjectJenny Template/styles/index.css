@@ -1,0 +1,22 @@
+body {
+    background-color: #2E9CCA;
+}
+
+#content {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+#title{
+    margin: 10px;
+    font-size: 2vmax;
+}
+
+#signUpDiv { 
+    display: inline-block;
+    padding : 10px;
+    border-radius: 10px;
+    background-color: #25274D;
+    margin: 10px;
+}
