@@ -64,19 +64,3 @@ body {
   height: 90vmax;
   overflow: hidden;
 }
-
-
-/* CLASSES */
-
-.center-obj {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.box {
-  height: 100%;
-  width: auto;
-  min-width: 50px;
-  min-height: 50px;
-}
