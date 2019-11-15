@@ -4,12 +4,14 @@ It is organized in the following way:
 
 The top level ontains these files:
   - index.html
-  - profile.html
   - login.html
+  - signup.html
+  - profile.html
   - mygroups.html
   
 It has the following subfolders:
-  - images
+  - resources
+    - icons
   - scripts
   - styles
   
