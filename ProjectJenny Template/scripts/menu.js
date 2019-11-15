@@ -9,7 +9,7 @@ $(document).ready(function () {
       "easing": "swing"
     };
     var spaceAnimationSlideIn = {
-      "left": "70%",
+      "left": "200px",
       "easing": "swing"
     };
     var spaceAnimationSlideOut = {
@@ -39,7 +39,7 @@ $(document).ready(function () {
       "top": "0",
       "left": "-100%",
       "height": "100%",
-      "width": "70%",
+      "width": "200px",
       "background-color":"#464866"
     })
 
@@ -47,7 +47,7 @@ $(document).ready(function () {
       //"background-color":"green",
       "left": "-100%",
       "top": "0",
-      "width": "30%",
+      "width": "auto",
       "height": "100%",
       "position": "absolute"
     })
