@@ -5,6 +5,19 @@
   <meta charset="utf-8">
   <title>Profile Page</title>
   <link rel="stylesheet" type="text/css" href="styles/templatelayout.css" />
+  <style>
+    #profilePic {
+      padding: 2vmax;
+      display: inline-block;
+      background-color: blueviolet;
+    }
+
+    #profileName {
+      display: inline-block;
+      background-color: chartreuse;
+      padding: 2vmax;
+    }
+  </style>
 </head>
 
 <body>
@@ -16,15 +29,31 @@
     </div>
     <div id="settings">burger</div>
   </header>
-  <div id="content"></div>
-  <footer>
-    <div id="navi">
-      <div id="home" class="navItem">home</div>
-      <div id="search" class="navItem">search</div>
-      <div id="notif" class="navItem">notif</div>
-      <div id="prof" class="navItem">prof</div>
+  <div id="content">
+    <div id="profileContainer">
+      <div id="profilePic">
+        Profile picture here
+      </div>
+      <div id="profileName">
+        Name here
+      </div>
+      <div id="program">
+        Program here
+      </div>
+      <div id="pref">
+        Preference here
+      </div>
+      <br />
+      <div id="scheduleContainer">
+        <div id="commonBreaks">
+          common breaks here
+        </div>
+        <div id="schedule">
+          schedule here
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
 </body>
 
 </html>
