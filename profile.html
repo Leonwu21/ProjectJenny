@@ -5,6 +5,20 @@
   <meta charset="utf-8">
   <title>Profile Page</title>
   <link rel="stylesheet" type="text/css" href="styles/templatelayout.css" />
+
+  <style>
+    #profilePic {
+      padding: 2vmax;
+      display: inline-block;
+      background-color: blueviolet;
+    }
+
+    #profileName {
+      display: inline-block;
+      background-color: chartreuse;
+      padding: 2vmax;
+    }
+  </style>
 </head>
 
 <body>
@@ -16,15 +30,70 @@
     </div>
     <div id="settings">burger</div>
   </header>
-  <div id="content"></div>
-  <footer>
-    <div id="navi">
-      <div id="home" class="navItem">home</div>
-      <div id="search" class="navItem">search</div>
-      <div id="notif" class="navItem">notif</div>
-      <div id="prof" class="navItem">prof</div>
+  <div id="content">
+    <div id="profileContainer">
+      <div id="profilePic">
+        Profile picture here
+      </div>
+      <div id="profileName">
+        Name here
+      </div>
+      <div id="program">
+        Program here
+      </div>
+      <br />
+      <div id="scheduleContainer">
+        <div id="scheduler">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">8AM-10AM</th>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+              </tr>
+              <tr>
+                <th scope="row">10AM-12PM</th>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+              </tr>
+              <tr>
+                <th scope="row">12PM-2PM</th>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+              </tr>
+              <tr>
+                <th scope="row">2PM-4PM</th>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+                <td><button type="button">Free?</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
 </body>
 
 </html>

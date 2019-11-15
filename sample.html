@@ -3,19 +3,11 @@
 <html>
 
 <head>
-
-</head>
-
-<body>
-
-  <h1>Testing Database</h1>
-  
-  
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+   https://firebase.google.com/docs/web/setup#available-libraries -->
 
   <script>
     // Your web app's Firebase configuration
@@ -33,8 +25,20 @@
 
     var db = firebase.firestore();
   </script>
+</head>
+
+<body>
 
   <script>
+
+    // Function to update user's free time
+    function updateSchedule() {
+      var userRef = db.collection("users");
+
+      userRef.doc("Tony").set({
+        name: "Tony",
+      });
+    }
   </script>
 </body>
 

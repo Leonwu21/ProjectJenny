@@ -45,6 +45,7 @@ header {
 #content {
     height: 80vmax;
     background-color: #2E9CCA;
+    padding: 5vmax;
 }
 
 /* div for welcome message. */
