@@ -4,7 +4,7 @@ function showName() {
 
   firebase.auth().onAuthStateChanged(function (user) {
     db.collection("users/").doc(user.uid)
-      .onSnapShot(function (d) {
+      .onSnapshot(function (d) {
         if (d.get('name') != null) {
           document.getElementById('name').innerHTML = d.data()["name"];
         }
