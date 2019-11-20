@@ -7,6 +7,8 @@ function showName() {
       .onSnapShot(function (d) {
         if (d.get('name') != null) {
           document.getElementById('name').innerHTML = d.data()["name"];
+        } else {
+          console.log("didn't work")
         }
       })
   })
