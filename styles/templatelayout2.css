@@ -1,0 +1,138 @@
+/* header */
+
+body {
+    margin: 0;
+}
+
+header {
+    background-color: #25274D;
+    height: 10vmax;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+/* header items */
+
+#menu{
+    background-image: url("../resources/icons/burgermenu.png");
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+#burger-menu {
+    display: table;
+    text-align: left;
+    height: 100%;
+    padding-left: 2vw;
+    font-size: xx-large;
+}
+
+#titleContainer {
+    display: table;
+    color: #eeeeee;
+    height: 100%;
+    text-align: center;
+    font-size: xx-large;
+    display: inline-block;
+}
+
+#search-bar {
+    display: table;
+    height: 100%;
+    text-align: right;
+    padding-right: 4vw;
+    font-size: xx-large;
+}
+
+/* maincontent */
+#content {
+    height: 80vmax;
+    background-color: #2E9CCA;
+    padding: 5vmax;
+}
+
+/* div for welcome message. */
+#welcome {
+    height: 9vmax;
+    background-color: #464866;
+    color: white;
+    font-size: 5vmax;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* div for content box */
+#imageBox {
+  height: 30vmax;
+  background-color: #AAABB8;
+  margin: 2vmax;
+}
+
+.newGroup {
+  display: flex;
+  justify-content: center;
+  padding: 4vmax 0 0;
+}
+
+.groupBox {
+  display: inline-block;
+  height: 7vmax;
+  width: 20vmax;
+  background-color: #AAABB8;
+  border-radius: 5px;
+}
+
+.join {
+  display: inline-block;
+  text-align: center;
+  color: white;
+  background-color: #29648A;
+  height: 5.5vmax;
+  font-size: 3vmax;
+  padding: 1vmax;
+  width: 12vmax;
+  margin-left: 5vmax;
+  border-radius: 20px;
+}
+/* footer */
+/* footer {
+    background-color: #25274D;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+} */
+
+/* navigation */
+#navi {
+    display: grid;
+}
+
+/* navigation buttons */
+#home {
+    grid-column: 1;
+}
+
+#search {
+    grid-column: 2;
+}
+
+#notif {
+    grid-column: 3;
+}
+
+#prof {
+    grid-column: 4;
+}
+
+.navItem {
+    text-align: center;
+    color: white;
+}
