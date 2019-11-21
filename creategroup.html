@@ -22,7 +22,7 @@
     }
 
     #name {
-      font-size: 2.7vmax;
+      font-size: 3vmax;
     }
 
     #nameField {
@@ -38,12 +38,8 @@
       letter-spacing: 1px;
     }
 
-    #creategroup {
-      margin: 0 auto;
-    }
-
     #description {
-      font-size: 2.4vmax;
+      font-size: 3vmax;
     }
 
     #timeButton {
@@ -133,10 +129,11 @@
           <input type="text" class="form-control" id="name" placeholder="Group Name">
         </div>
       </div>
-      <div id="creategroup" class="form-group">
-        <label for="description">Description:</label>
-        <textarea class="form-control" rows="5" id="description"
-          placeholder="A short description of your group's study topic"></textarea>
+      <div id="creategroup" class="form-group row">
+        <label for="description" class="col-sm-2 col-form-label">Course:</label>
+        <div class="col-sm-10">
+          <input type='text' class="form-control" id="description" placeholder="Course of Study" />
+        </div>
       </div>
       <div class="dropdown">
         <button id='timeButton' class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Time
