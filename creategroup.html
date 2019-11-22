@@ -130,18 +130,25 @@
         </div>
       </div>
       <div id="creategroup" class="form-group row">
-        <label for="description" class="col-sm-2 col-form-label">Course:</label>
+        <label for="course" class="col-sm-2 col-form-label">Course:</label>
         <div class="col-sm-10">
-          <input type='text' class="form-control" id="description" placeholder="Course of Study" />
+          <input type='text' class="form-control" id="course" placeholder="Course of Study" />
         </div>
       </div>
       <div class="form-group">
+        <select class="form-control" name="Day" id="day">
+          <option value="monday">Monday</option>
+          <option value="tuesday">Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+          <option value="thursday">Thursday</option>
+          <option value="friday">Friday</option>
+        </select>
         <!-- <label for=""></label> -->
         <select class="form-control" name="Time" id="time">
-          <option>10AM - 12PM</option>
-          <option>12PM - 2PM</option>
-          <option>2PM - 4PM</option>
-          <option>4PM - 6PM</option>
+          <option value="1">10AM - 12PM</option>
+          <option value="2">12PM - 2PM</option>
+          <option value="3">2PM - 4PM</option>
+          <option value="4">4PM - 6PM</option>
         </select>
       </div>
       <div id='submitButton'>
