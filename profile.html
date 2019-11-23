@@ -3,24 +3,39 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Project Jenny</title>
+  <title>Profile | Project Jenny</title>
   <link rel="stylesheet" type="text/css" href="styles/templatelayout2.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
     #profilePic {
+      height: 10vmax;
+      width: 10vmax;
+      margin: 3vmax;
+      object-fit: cover;
       padding: 2vmax;
       display: inline-block;
-      background-color: blueviolet;
-    }
-
-    #profileName {
-      display: inline-block;
-      background-color: chartreuse;
-      padding: 2vmax;
+      background-color: #29648A;
+      border-radius: 10%;
+      float: left;
     }
   </style>
+<!-- Firebase Data -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
 
+<!-- The Firebase Authentication UI Library -->
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+
+<!-- Firebase Configuration -->
+<script src="scripts/firebase_config_jenny.js"></script>
+
+<!-- Boostrap Data -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
@@ -88,19 +103,34 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
 
 
   <div id="content">
-    <div id="profileContainer">
-      <div id="profilePic">
-        Profile picture here
+    
+
+    <div class="card border-primary">
+      <img id="profilePic" class="card-img-top" src="resources/icons/profile.png" alt="Profile picture">
+      <div class="card-body">
+        <h1 class="card-title"><span id="userName"></span></h1>
+        <p class="card-text"><span id="userBio">Bio Info Here</span></p>
+        <div id="userInfo" class="card-text">
+          Courses
+          <ul>
+            <li>COMP 1510</li>
+            <li>COMP 1536</li>
+          </ul>
+        </div>
       </div>
-      <div id="profileName">
-        Name here
-      </div>
-      <div id="program">
-        Program here
-      </div>
-     
     </div>
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="scripts/menu.js"></script>
+  <!-- Create Users Script to add users to the "users collection" in firebase -->
+  <script src="scripts/read_groups.js"></script>
+  <script src="scripts/read_user.js"></script>
+
+  <script>
+    getGroups();
+    showName();
+  </script>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
