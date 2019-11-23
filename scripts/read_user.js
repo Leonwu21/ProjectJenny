@@ -9,7 +9,7 @@ function showName() {
     // in index.html
     db.collection("users/").doc(user.uid).onSnapshot(function (d) {
         if (d.get('name') != null) {
-          document.getElementById('name').innerHTML = d.data()["name"];
+          document.getElementById('userName').innerHTML = d.data()["name"];
         } else {
           console.log("didn't work")
         }
