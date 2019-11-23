@@ -7,6 +7,7 @@ body {
 header {
     background-color: #25274D;
     height: 5vmax;
+    padding: 0 1vmax;
     width: 100%;
     position: sticky;
     top: 0;
@@ -39,7 +40,7 @@ header {
     color: #eeeeee;
     height: 100%;
     text-align: center;
-    font-size: xx-large;
+    font-size: 3vmax;
     display: inline-block;
 }
 
