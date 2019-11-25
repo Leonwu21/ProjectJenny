@@ -1,7 +1,7 @@
 // Function that creates a new document in the users collection
 function createUser() {
 
-  firebase.auth().onAuthStateChanged(function (user) {
+  firebase.auth().onAuthStateChanged(function(user) {
 
     // if the current user logged in user
     // is authenticated, then grab "uid" "displayName" and "email"

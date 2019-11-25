@@ -1,7 +1,7 @@
 function signout() {
-  firebase.auth().signOut().then(function() {
-    console.log('Signed Out');
-  }, function(error) {
-    console.error('Sign Out Error', error);
+  firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().signOut().then(function () {
+      console.log("sign out");
+    });
   });
 }
