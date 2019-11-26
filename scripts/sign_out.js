@@ -5,3 +5,9 @@ function signout() {
     });
   });
 }
+
+$(document).ready(function () {
+  $('#signOut').click(function (x) {
+    signout();
+  });
+});
