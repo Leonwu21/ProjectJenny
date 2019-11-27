@@ -19,29 +19,20 @@ function findGroups(day, slot) {
   db.collection("groups/")
     .where("day", "==", day).where("slot", "==", slot)
     .get().then(function (snap) {
-      
+
       snap.forEach(function (doc) {
         let groupName = doc.data().name;
         let groupDay = doc.data()['day'];
         let groupSlot = doc.data()['slot'];
         let groupCourse = doc.data().course;
-        // let newDiv = $("<div class='group'><span id='" + i + "' class='groupName'></span>\
-        //   <span id='"+ j + "' class='groupTime'></span><span id='" + h + "' class='groupCourse'></span></div>");
 
         // Join button added inside code
         let newDiv = $("<div class='group'><div class='groupName'>" + groupName + "</div>\
-          <div id='' class='groupTime'>"+groupDay+ " " + groupSlot+ "</div>\
+          <div id='' class='groupTime'>"+ groupDay + " " + groupSlot + "</div>\
           <div id='' class='groupCourse'>"+ groupCourse + "</div>\
           <button type='button' class='joinButton btn btn-primary'>Join Group</button>\
           </div>");
         $("#content").append(newDiv);
-        // $("'#" + i + "'").append(groupName);
-        // $("'#" + j + "'").append(groupDay);
-        // $("'#" + j + "'").append(groupSlot);
-        // $("'#" + h + "'").append(groupCourse);
-        i++;
-        j++;
-        h++;
       });
     });
 }
