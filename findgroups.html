@@ -11,6 +11,22 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
+  <!-- The Firebase Authentication UI Library -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+
+  <!-- Firebase Configuration -->
+  <script src="scripts/firebase_config_jenny.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
   <style>
     .group {
       height: 10vmax;
@@ -105,20 +121,7 @@
   </div>
 
   <!-- Place content here -->
-  <div id="content">
-    <div class="group">
-      <span class="groupName">
-        name
-      </span>
-      <span class="groupTime">
-        time
-      </span>
-      <span class="groupCourse">
-        course
-      </span>
-
-    </div>
-  </div>
+  <div id='content'></div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -131,11 +134,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-  <script src="/scripts/read_groups.js"></script>
+  <script src="scripts/read_groups.js"></script>
   <script src="scripts/sign_out.js"></script>
   <script>
-    $(".group").append(showGroups());
-    // have to loop "group" divs
+    // figure out which groups match profile slots
+    // assign matches to an array
+    // loop through array and create divs programmatically
+    showGroups();
+
   </script>
 </body>
 
