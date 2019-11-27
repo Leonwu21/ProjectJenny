@@ -115,30 +115,3 @@ strong{
     position: fixed;
     bottom: 0;
 } */
-
-/* navigation */
-#navi {
-    display: grid;
-}
-
-/* navigation buttons */
-#home {
-    grid-column: 1;
-}
-
-#search {
-    grid-column: 2;
-}
-
-#notif {
-    grid-column: 3;
-}
-
-#prof {
-    grid-column: 4;
-}
-
-.navItem {
-    text-align: center;
-    color: white;
-}
