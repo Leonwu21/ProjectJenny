@@ -27,8 +27,13 @@ function findGroups(day, slot) {
         let groupCourse = doc.data().course;
         // let newDiv = $("<div class='group'><span id='" + i + "' class='groupName'></span>\
         //   <span id='"+ j + "' class='groupTime'></span><span id='" + h + "' class='groupCourse'></span></div>");
-        let newDiv = $("<div class='group'><span id='' class='groupName'>" + groupName + "</span>\
-          <span id='' class='groupTime'>"+groupDay+ " " + groupSlot+ "</span><span id='' class='groupCourse'>"+ groupCourse + "</span></div>");
+
+        // Join button added inside code
+        let newDiv = $("<div class='group'><div class='groupName'>" + groupName + "</div>\
+          <div id='' class='groupTime'>"+groupDay+ " " + groupSlot+ "</div>\
+          <div id='' class='groupCourse'>"+ groupCourse + "</div>\
+          <button type='button' class='joinButton btn btn-primary'>Join Group</button>\
+          </div>");
         $("#content").append(newDiv);
         // $("'#" + i + "'").append(groupName);
         // $("'#" + j + "'").append(groupDay);
