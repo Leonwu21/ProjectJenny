@@ -48,6 +48,16 @@
     .font-l {
       font-size: 3vmax;
     }
+
+    #namePic {
+      font-weight: bold;
+    }
+
+    #userName{
+      height: 100%;
+      display: table-cell;
+      vertical-align: middle;
+    }
   </style>
 </head>
 
@@ -125,19 +135,22 @@
 
 
     <div class="card border-primary">
-      <img id="profilePic" class="card-img-top" src="resources/icons/profile.png" alt="Profile picture">
+      <div id="namePic">
+        <img id="profilePic" class="card-img-top" src="resources/icons/profile.png" alt="Profile picture">
+        <div class="card-title"><span id="userName">Name</span></div>
+      </div>
+
       <div class="card-body font-l">
-        <h1 class="card-title"><span id="userName"></span></h1>
         <p class="card-text"><span id="userBio">Bio Info Here</span></p>
         <div id="userInfo" class="card-text">
           Courses
-          <ul>
+          <ul id="Courses">
             <li>COMP 1510</li>
             <li>COMP 1536</li>
           </ul>
           Free slots
-          <ul id="freeSlots">
-          </ul>
+          <table id="freeSlots">
+          </table>
         </div>
       </div>
     </div>
