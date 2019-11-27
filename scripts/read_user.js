@@ -7,17 +7,23 @@ function showName() {
     // user is authenticated, then grab the "uid" to access the
     // current user's document in fire base to display the user name
     // in index.html
-    db.collection("users/").doc(user.uid).onSnapshot(function (d) {
-      if (d.get('name') != null) {
-        document.getElementById('userName').innerHTML = d.data()["name"];
-      } else {
-        console.log("didn't work")
-        loginReq();
-      }
-    })
+    if (user != null) {
+      db.collection("users/").doc(user.uid).onSnapshot(function (d) {
+        if (d.get('name') != null) {
+          document.getElementById('userName').innerHTML = d.data()["name"];
+        } else {
+          console.log("didn't work")
+
+        }
+      })
+    } else {
+      console.log("Open new Window");
+      loginReq();
+    }
+
   })
 }
 
 function loginReq() {
-  $('#menu').attr('style', 'visibility: none;');
+  location.href = "./login.html"
 }
