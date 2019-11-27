@@ -20,7 +20,7 @@ function getFreeSlot() {
               case "4": time = "4PM - 6PM";
             }
             var li = document.createElement("li");
-            li.innerHTML = "" + day + ",&nbsp;" + time;
+            li.innerHTML = "" +  day.charAt(0).toUpperCase() + day.substring(1) + ",&nbsp;" + time;
             document.getElementById("freeSlots").appendChild(li);
           });
         });
