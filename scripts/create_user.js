@@ -11,6 +11,7 @@ function createUser() {
       db.collection("users").doc(user.uid).set({
         "name": user.displayName,
         "email": user.email,
+        "userId": user.uid
       }, { merge: true });
       
     } else {
