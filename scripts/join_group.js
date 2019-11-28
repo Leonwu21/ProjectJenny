@@ -1,12 +1,17 @@
-/**
- * Function to update members in a group.
- * @param {string} groupId of the group
- */
-function joinGroup(groupId) {
-  console.log(groupId);
-  firebase.auth().authOnStateChanged(function(user) {
-    db.collection("groups").doc(groupId).set({
-      "members": firebase.firestore.FieldValue.arrayUnion(user.uid)
-    }, {merge: true});
+
+
+$(document).ready(function () {
+  $('button').click(function (param) {
+    firebase.auth().onAuthStateChanged(function (user) {
+      console.log("clicked");
+      // var btn = this;
+      // var id;
+      // var name;
+      db.collection("groups").doc(btn.value()).collection("members")
+      .add({
+        memberId: user.uid
+      });
+    });
+
   });
-}
+});

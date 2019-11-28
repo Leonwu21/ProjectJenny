@@ -25,6 +25,7 @@ function findGroups(day, slot) {
         let groupDay = doc.data()['day'];
         let groupSlot = doc.data()['slot'];
         let groupCourse = doc.data().course;
+
         let groupId = doc.id;
 
         console.log(groupId);
@@ -33,11 +34,11 @@ function findGroups(day, slot) {
 
         let tableContent = $(
           "<tr>\
-          <td>" + groupName + "</td>\
-          <td>" + groupDay + "</td>\
+          <td value='groupName'>" + groupName + "</td>\
+          <td>" + groupDay + "</td'>\
           <td>" + groupSlot + "</td>\
-          <td>" + groupCourse + "</td>\
-          <td><button type='button' class='joinButton btn btn-primary' onclick = 'joinGroup(\"" + groupId + "\")'>Join Group</button></td>\
+          <td value='groupSlot'>" + groupCourse + "</td>\
+          <td><button type='button' value='" + groupId +"' class='joinButton btn btn-primary'>Join Group</button></td>\
           </tr>"
         );
 
@@ -48,8 +49,25 @@ function findGroups(day, slot) {
         //   <button type='button' class='joinButton btn btn-primary'>Join Group</button>\
         //   </div>");
         $("#content").append(tableDiv);
+
+        $("td button[value='" + groupId + "']").click(function (e) { 
+          e.preventDefault();
+          console.log(this.value);
+          joinGroup(this.value);
+        });
       });
     });
+}
+
+function joinGroup( group_id) {
+  firebase.auth().onAuthStateChanged(function (user) {
+      db.collection("users/").doc(user.uid).collection("groups").add({
+          groupId: group_id
+      })
+          .then(function (snap) {
+              console.log("Document written with ID: " + snap.id);
+          });
+  });
 }
 
 function showGroups() {
