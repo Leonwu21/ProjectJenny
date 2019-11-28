@@ -25,7 +25,12 @@ function findGroups(day, slot) {
         let groupDay = doc.data()['day'];
         let groupSlot = doc.data()['slot'];
         let groupCourse = doc.data().course;
+<<<<<<< HEAD
         let groupID = doc.id;
+=======
+        let groupId = doc.id;
+
+>>>>>>> 94aa3351d19e5b17467d85aaa8b3577409ea4e46
         // Join button added inside code
         let tableDiv = $('<table></table>');
 
