@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,7 +32,23 @@
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    </script>
+  <style>
+    .prompt {
+      background-color: #CBE5FE;
+      padding: 3vmax;
+      margin: 0 3vmax;
+      border-radius: 20px;
+      font-size: 3vmax;
+    }
+
+    #promptGroups {
+      text-align: center;
+      font-size: 4vmax;
+      color: whitesmoke;
+      margin: 5vmax;
+    }
+  </style>
 </head>
 
 <body>
@@ -112,7 +128,13 @@
       </button>
       <strong> Welcome&nbsp;<span id="userName"></span></strong>
     </div>
-
+    <div id="prompt">
+      <p id='promptGroups'>Don't have any groups?</p>
+      <div class="prompt" style="float:right"><a href="findgroups.html">Find some groups!</a>
+      </div>
+      <div class="prompt" style="float:left"><a href="creategroup.html">Create a group!</a>
+      </div>
+    </div>
   </div>
 
   <!--currently not needed
@@ -141,13 +163,13 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="scripts/sign_out.js"></script>
 </body>
 
