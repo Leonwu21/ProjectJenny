@@ -38,7 +38,7 @@ function findGroups(day, slot) {
           <td>" + groupDay + "</td'>\
           <td>" + groupSlot + "</td>\
           <td value='groupSlot'>" + groupCourse + "</td>\
-          <td><button type='button' value='" + groupId +"' class='joinButton btn btn-primary'>Join Group</button></td>\
+          <td><button type='button' value='" + groupId + "' class='joinButton btn btn-primary'>Join Group</button></td>\
           </tr>"
         );
 
@@ -50,7 +50,7 @@ function findGroups(day, slot) {
         //   </div>");
         $("#content").append(tableDiv);
 
-        $("td button[value='" + groupId + "']").click(function (e) { 
+        $("td button[value='" + groupId + "']").click(function (e) {
           e.preventDefault();
           console.log(this.value);
           joinGroup(this.value);
@@ -59,14 +59,15 @@ function findGroups(day, slot) {
     });
 }
 
-function joinGroup( group_id) {
+function joinGroup(group_id) {
   firebase.auth().onAuthStateChanged(function (user) {
-      db.collection("users/").doc(user.uid).collection("groups").add({
-          groupId: group_id
-      })
-          .then(function (snap) {
-              console.log("Document written with ID: " + snap.id);
-          });
+    db.collection("groups/").doc(group_id).collection("members").add({
+      groupId: user.uid
+    })
+      .then(function (snap) {
+        console.log("Document written with ID: " + snap.id);
+        console.log(group_id + "User ID:" + user.uid);
+      });
   });
 }
 
