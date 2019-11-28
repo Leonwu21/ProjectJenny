@@ -10,7 +10,7 @@ function showName() {
     if (user != null) {
       db.collection("users/").doc(user.uid).onSnapshot(function (d) {
         if (d.get('name') != null) {
-          document.getElementById('userName').innerHTML = d.data()["name"];
+          document.getElementById('userName').innerHTML = d.data()["name"].charAt(0).toUpperCase() + d.data()["name"].substring(1);
         } else {
           console.log("didn't work")
 
