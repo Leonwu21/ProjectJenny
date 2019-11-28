@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Template Website</title>
+  <title>Create Group | Project Jenny</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -72,25 +72,28 @@
 </head>
 
 <body>
-  <header>
-    <!-- Nav Button -->
-    <a id="menu" data-toggle="collapse" href="#collapseExample">
-
-    </a>
-    <!-- Title -->
-    <div id="titleContainer">
-      <div id="title">
-        Create Group
-      </div>
-    </div>
-
-
-  </header>
+    <header class="header">
+        <div id="banner">
+          <!-- Nav Button -->
+          <div class='menutop'>
+            <a class='menutop' id="menu" data-toggle="collapse" href="#collapseExample"></a>
+          </div>
+          <!-- Title -->
+          <div id="titleContainer">
+            <div id="title">
+              Create Group
+            </div>
+          </div>
+          <div class='menutop'>
+            <a id="settings" class="menutop" href="./profile.html"></a>
+          </div>
+        </div>
+      </header>
   <!-- Nav -->
   <div class="collapse" id="collapseExample">
     <div class="card card-body">
       <nav>
-        <ul class="navbar-nav mr-auto">
+        <ul id="links" class="navbar-nav mr-auto">
           <!-- LINK ITEM -->
           <li class="nav-item active">
             <a class="nav-link" href="./home.html">Home <span class="sr-only">(current)</span></a>

@@ -4,56 +4,85 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Find Groups</title>
+  <title>Find Groups | Project Jenny</title>
   <link rel="stylesheet" type="text/css" href="styles/templatelayout2.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
+  <!-- The Firebase Authentication UI Library -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+
+  <!-- Firebase Configuration -->
+  <script src="scripts/firebase_config_jenny.js"></script>
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
   <style>
     .group {
+      display: flex;
+      justify-content: space-between;
       height: 10vmax;
       background-color: rgb(209, 229, 238);
       padding: 2vmax;
+      font-size: 3vmax;
     }
 
     .groupName {
       float: left;
-      font-size: 3vmax;
     }
 
     .groupCourse {
       display: flex;
       justify-content: center;
-      font-size: 3vmax;
     }
 
     .groupTime {
       float: right;
+
+    }
+
+    .joinButton {
       font-size: 3vmax;
     }
   </style>
 </head>
 
 <body>
-  <header class='header'>
-    <!-- Nav Button -->
-    <a id="menu" data-toggle="collapse" href="#collapseExample">
-    </a>
-    <!-- Title -->
-    <a id="titleContainer">
-      <div id="title">
-        Find Groups
+  <header class="header">
+    <div id="banner">
+      <!-- Nav Button -->
+      <div class='menutop'>
+        <a class='menutop' id="menu" data-toggle="collapse" href="#collapseExample"></a>
       </div>
-    </a>
-
+      <!-- Title -->
+      <div id="titleContainer">
+        <div id="title">
+          Find Group
+        </div>
+      </div>
+      <div class='menutop'>
+        <a id="settings" class="menutop" href="./profile.html"></a>
+      </div>
+    </div>
   </header>
   <!-- Nav -->
   <div class="collapse" id="collapseExample">
     <div class="card card-body">
       <nav>
-        <ul class="navbar-nav mr-auto">
+        <ul id="links" class="navbar-nav mr-auto">
           <!-- LINK ITEM -->
           <li class="nav-item active">
             <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
@@ -100,20 +129,7 @@
   </div>
 
   <!-- Place content here -->
-  <div id="content">
-    <div class="group">
-      <span class="groupName">
-        name
-      </span>
-      <span class="groupTime">
-        time
-      </span>
-      <span class="groupCourse">
-        course
-      </span>
-
-    </div>
-  </div>
+  <div id='content'></div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -126,11 +142,17 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-  <script src="/scripts/read_groups.js"></script>
+
+
+  <script src="scripts/read_groups.js"></script>
   <script src="scripts/sign_out.js"></script>
+  <script src="scripts/join_group.js"></script>
   <script>
-    $(".group").append(showGroups());
-    // have to loop "group" divs
+    // figure out which groups match profile slots
+    // assign matches to an array
+    // loop through array and create divs programmatically
+    showGroups();
+
   </script>
 </body>
 

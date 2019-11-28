@@ -16,18 +16,34 @@ function getGroups() {
 }
 
 function findGroups(day, slot) {
-  db.collection("groups")
+  db.collection("groups/")
     .where("day", "==", day).where("slot", "==", slot)
     .get().then(function (snap) {
+      
       snap.forEach(function (doc) {
-        console.log(doc.data());
+        let groupName = doc.data().name;
+        let groupDay = doc.data()['day'];
+        let groupSlot = doc.data()['slot'];
+        let groupCourse = doc.data().course;
+        let groupId = doc.id;
+
+        // let newDiv = $("<div class='group'><span id='" + i + "' class='groupName'></span>\
+        //   <span id='"+ j + "' class='groupTime'></span><span id='" + h + "' class='groupCourse'></span></div>");
+
+        // Join button added inside code
+        let newDiv = $("<div class='group'><div class='groupName'>" + groupName + "</div>\
+          <div id='' class='groupTime'>"+groupDay+ " " + groupSlot+ "</div>\
+          <div id='' class='groupCourse'>"+ groupCourse + "</div>\
+          <button type='button' class='joinButton btn btn-primary' onclick = 'joinGroup('" + groupId + "')'>Join Group</button>\
+          </div>");
+        $("#content").append(newDiv);
       });
     });
 }
 
 function showGroups() {
   firebase.auth().onAuthStateChanged(function (user) {
-    db.collection("users").doc(user.uid).collection("freeslot").get()
+    db.collection("users/").doc(user.uid).collection("freeslot").get()
       .then(function (snap) {
         snap.forEach(function (doc) {
           var dayfree = doc.data().day;
