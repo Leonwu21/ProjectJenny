@@ -70,6 +70,41 @@
       display: table-cell;
       vertical-align: middle;
     }
+
+    input[type=submit] {
+      border-radius: 10px;
+      background-color: #29648A;
+      border-color: #29648A;
+      color: white;
+      padding: 2vmax;
+      letter-spacing: 1px;
+    }
+
+    .form-control {
+      font-size: 3vmax;
+      margin-bottom: 3vmax;
+    }
+
+    #day {
+      margin-bottom: 10vmax;
+    }
+
+    #time {
+      margin-bottom: 10vmax;
+    }
+
+    #submitButton {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    #submit {
+      border-radius: 10px;
+      background-color: #29648A;
+      border-color: #29648A;
+      color: white;
+    }
   </style>
 </head>
 
@@ -150,7 +185,7 @@
       <div id="namePic">
         <img id="profilePic" class="card-img-top" src="resources/icons/profile.png" alt="Profile picture">
         <div class="card-title"><span id="userName">Name</span>
-          <span id="edit" style="cursor:pointer">Edit Profile button</span>
+          <span id="edit" style="cursor:pointer; font-size:3vmax">Edit Profile</span>
         </div>
       </div>
 
@@ -187,6 +222,7 @@
     </script>
   <script src="scripts/sign_out.js"></script>
   <script src="scripts/read_freeslot.js"></script>
+  <script src="scripts/set_time.js"></script>
   <script>
     $(document).ready(function () {
       $("#edit").click(function () {
@@ -206,7 +242,7 @@
         var option2 = $("<option value='2'>12PM - 2PM</option>");
         var option3 = $("<option value='3'>2PM - 4PM</option>");
         var option4 = $("<option value='4'>4PM - 6PM</option>");
-        var submit = $("<input type='submit' value='save'></input>");
+        var submit = $("<div id='submitButton'><button id='submit' type='button' onclick='setTime()'>Update Changes</button></div>");
 
         $("#divContent").prepend(divForm);
         $(divForm).append(form);
@@ -226,12 +262,17 @@
         $(select2).append(option4);
         $(form).append(submit);
 
-        $("#formContainer").css("height", "60vmax");
+        $("#formContainer").css("height", "50vmax");
       });
     });
     getGroups();
     showName();
     getFreeSlot();
+
+    //why doesn't this work??
+    $("#submit").click(function () {
+      alert("Changes Saved!");
+    })
   </script>
 </body>
 
