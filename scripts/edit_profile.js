@@ -48,31 +48,32 @@ function progressBar() {
                 location.href = "./index.html";
                 break;
         }
-        unCheck();
     });
 }
 
 function unCheck() {
-    // for (let i = 1; i < 5; i++) {
-    //     let chkbx = $("#check" + i);  
-    //     chkbx.attr("checked");
-    // }
+    for (let i = 1; i < 5; i++) {
+        // let chkbx = $("#check" + i);
+        document.getElementById("check" + i).checked = false;
+    }
 }
 
 function setTime(dayval) {
     firebase.auth().onAuthStateChanged(function (user) {
         var datab = db.collection("users").doc(user.uid).collection("freeslot");
         for (let i = 1; i < 5; i++) {
-            if ($("#check" + i).prop("checked")==true) {
+            if ($("#check" + i).prop("checked") == true) {
                 console.log("It went in");
                 datab.add({
                     day: dayval,
                     slot: "" + i
+                }).then(function(){
+                    unCheck();
                 });
             }
 
         }
     });
-    unCheck();
+    
 }
 
