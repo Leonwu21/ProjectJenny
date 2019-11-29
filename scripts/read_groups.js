@@ -103,7 +103,7 @@ function findGroups(day, slot) {
         // tableDiv.append(tableContent);
         $("#groups").append(card);
 
-        $("td button[value='" + groupId + "']").click(function (e) {
+        $("button[value='" + groupId + "']").click(function (e) {
           e.preventDefault();
           console.log(this.value);
           joinGroup(this.value);
