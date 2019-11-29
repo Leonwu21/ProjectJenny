@@ -19,14 +19,36 @@ function getGroups() {
             var groupName = snap.data().name;
             var groupDay = snap.data().day;
             var groupSlot = snap.data().slot;
+            var timeSlot;
+            switch (groupSlot) {
+              case "1": timeSlot = "10AM - 12PM";
+                break;
+              case "2": timeSlot = "12PM - 2PM";
+                break;
+              case "3": timeSlot = "2PM - 4PM";
+                break;
+              case "4": timeSlot = "4PM - 6PM";
+            }
             var groupCourse = snap.data().course;
 
-            console.log("Name: " + groupName);
-            console.log("Day: " + groupDay);
-            console.log("Slot: " + groupSlot);
-            console.log("Course: " + groupCourse);
+            // console.log("Name: " + groupName);
+            // console.log("Day: " + groupDay);
+            // console.log("Slot: " + groupSlot);
+            // console.log("Course: " + groupCourse);
 
-            // TODO the html part 
+            $(document).ready(function () {
+              let box = $("<div id='box'></div>");
+              let name = $("<span id='name' class='span'>" + groupName + "</span>");
+              let time = $("<span id='time' class='span'>" + groupDay + ",&nbsp;" + timeSlot + "</span>");
+              let course = $("<span id='course' class='span'>" + groupCourse + "</span>");
+
+              $("#content").append(box);
+              $(box).append(name);
+              $(box).append(time);
+              $(box).append(course);
+
+            });
+
           });
         });
       });
@@ -76,7 +98,7 @@ function findGroups(day, slot) {
           e.preventDefault();
           console.log(this.value);
           joinGroup(this.value);
-          alert("Group joined!");
+
         });
       });
     });
@@ -93,7 +115,7 @@ function getFreeTime() {
           var dayfree = doc.data().day;
           var slotfree = doc.data().slot;
           findGroups(dayfree, slotfree);
-        });
+        })
       });
   });
 }
