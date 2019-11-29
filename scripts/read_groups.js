@@ -5,32 +5,53 @@
 function getGroups() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      firebase.auth().onAuthStateChanged(function (user) {
-        // Using onSnapShot() to get groups' IDs that the users are in
-        // console the group out
-        db.collection("users/").doc(user.uid).collection("groups").onSnapshot(function (d) {
-          d.forEach(function (doc) {
-            // console.log(doc.data());
-            var groupId = doc.data().groupId;
+      // Using onSnapShot() to get groups' IDs that the users are in
+      // console the group out
+      db.collection("users/").doc(user.uid).onSnapshot(function (doc) {
 
-            // Get the group's infos with the group id
-            db.collection("groups").doc(groupId).onSnapshot(function (snap) {
-              var groupName = snap.data().name;
-              var groupDay = snap.data().day;
-              var groupSlot = snap.data().slot;
-              var groupCourse = snap.data().course;
+        // console.log(doc.data());
+        var groupId = doc.data().groups;
+        console.log(groupId);
 
-              // need to look for groups that are already joined
-              console.log("Name: " + groupName);
-              console.log("Day: " + groupDay);
-              console.log("Slot: " + groupSlot);
-              console.log("Course: " + groupCourse);
+        // Get the group's infos with the group id
+        groupId.forEach(function (gId) {
+          db.collection("groups").doc(gId).onSnapshot(function (snap) {
+            var groupName = snap.data().name;
+            var groupDay = snap.data().day;
+            var groupSlot = snap.data().slot;
+            var timeSlot;
+            switch (groupSlot) {
+              case "1": timeSlot = "10AM - 12PM";
+                break;
+              case "2": timeSlot = "12PM - 2PM";
+                break;
+              case "3": timeSlot = "2PM - 4PM";
+                break;
+              case "4": timeSlot = "4PM - 6PM";
+            }
+            var groupCourse = snap.data().course;
 
-              // TODO the html part 
+            // console.log("Name: " + groupName);
+            // console.log("Day: " + groupDay);
+            // console.log("Slot: " + groupSlot);
+            // console.log("Course: " + groupCourse);
+
+            $(document).ready(function () {
+              let box = $("<div id='box'></div>");
+              let name = $("<span id='name' class='span'>" + groupName + "</span>");
+              let time = $("<span id='time' class='span'>" + groupDay + ",&nbsp;" + timeSlot + "</span>");
+              let course = $("<span id='course' class='span'>" + groupCourse + "</span>");
+
+              $("#content").append(box);
+              $(box).append(name);
+              $(box).append(time);
+              $(box).append(course);
+
             });
+
           });
         });
-      })
+      });
     } else {
       console.log("Not signed in");
     }

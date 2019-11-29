@@ -11,6 +11,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
@@ -24,6 +25,27 @@
   <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
 
   <script src="./scripts/firebase_config_jenny.js"></script>
+  <style>
+    #box {
+      background-color: #CBE5FE;
+      font-size: 3vmax;
+      margin: 5vmax;
+      padding: 2vmax;
+    }
+
+    #time {
+      float: right;
+    }
+
+    #name {
+      float: left;
+    }
+
+    #course {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -45,7 +67,7 @@
     </div>
   </header>
 
-  
+
   <!-- Nav -->
   <div class="collapse" id="collapseExample">
     <div class="card card-body">
