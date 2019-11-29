@@ -4,11 +4,13 @@ $(document).ready(function () {
     $('#currentDay').text("Monday");
 
     progressBar()
+
 });
 
 
+
 // Global Variables
-var progress = 0;
+var progress = 1;
 
 function progressBar() {
     $('#nextProfDat').click(function () {
@@ -51,17 +53,18 @@ function progressBar() {
 }
 
 function unCheck() {
-    for(let i = 1; i < 5; i++){
-        $("#check" + i).prop("checked") = true;        
-    }
+    // for (let i = 1; i < 5; i++) {
+    //     let chkbx = $("#check" + i);  
+    //     chkbx.attr("checked");
+    // }
 }
 
 function setTime(dayval) {
     firebase.auth().onAuthStateChanged(function (user) {
         var datab = db.collection("users").doc(user.uid).collection("freeslot");
         for (let i = 1; i < 5; i++) {
-            if ($("#check" + i).prop("checked") == true
-            && !datab.where("day","==",dayval).where("slot","==",i).exists) {
+            if ($("#check" + i).prop("checked")==true) {
+                console.log("It went in");
                 datab.add({
                     day: dayval,
                     slot: "" + i
@@ -70,5 +73,6 @@ function setTime(dayval) {
 
         }
     });
+    unCheck();
 }
 
