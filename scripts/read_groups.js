@@ -1,15 +1,33 @@
 /**
- * Get the current groups that the users are in.
+ * Gets current groups' IDs that the users are in and display the groups' infos by
+ * groups' IDs.
  */
 function getGroups() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       firebase.auth().onAuthStateChanged(function (user) {
-        // Using onSnapShot() to get groups id that the users are in
+        // Using onSnapShot() to get groups' IDs that the users are in
         // console the group out
         db.collection("users/").doc(user.uid).collection("groups").onSnapshot(function (d) {
           d.forEach(function(doc) {
-            console.log(doc.data());
+            // console.log(doc.data());
+            var groupId = doc.data().groupId;
+
+            // Get the group's infos with the group id
+            db.collection("groups").doc(groupId).onSnapshot()
+            .then(function(snap) {
+              var groupName = snap.data().name;
+              var groupDay = snap.data().day;
+              var groupSlot = snap.data().slot;
+              var groupCourse = snap.data().course;
+
+              console.log("Name: " + groupName);
+              console.log("Day: " + groupDay);
+              console.log("Slot: "  + groupSlot);
+              console.log("Course: " + groupCourse);
+
+              // TODO the html part 
+            });
           });
         });
       })
@@ -18,32 +36,6 @@ function getGroups() {
     }
   });
 }
-
-// function showMyGroups() {
-//   firebase.auth().onAuthStateChanged(function (user) {
-//     db.collection("groups/")
-//       .get().then(function (snap) {
-//         snap.forEach(function (doc) {
-//           groupId = doc.id;
-//           findMembers(groupId);
-//         });
-//       });
-//   });
-// }
-
-// function findMembers(groupId) {
-//   firebase.auth().onAuthStateChanged(function (user) {
-//     db.collection("groups/").doc(groupId).collection("members/")
-//       .get().then(function (snap) {
-//         snap.forEach(function (doc) {
-//           let userId = doc.data().groupId;
-//           if (userId = user.uid) {
-//             showGroups();
-//           }
-//         });
-//       });
-//   });
-// }
 
 /**
  * Get the groups with the same day and slot of the current user and displays
