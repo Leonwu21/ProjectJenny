@@ -15,6 +15,35 @@ function getGroups() {
   });
 }
 
+function showMyGroups() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    db.collection("groups/")
+      .get().then(function (snap) {
+        snap.forEach(function (doc) {
+          groupId = doc.id;
+          findMembers(groupId);
+        });
+      });
+  });
+}
+
+function findMembers(groupId) {
+  firebase.auth().onAuthStateChanged(function (user) {
+    db.collection("groups/").doc(groupId).collection("members/")
+      .get().then(function (snap) {
+        snap.forEach(function (doc) {
+          memberId = doc.id;
+          console.log(memberId);
+          // let x = 0;
+          // if (memberId == user.uid) {
+          //   x++;
+          //   console.log(x);
+          // }
+        })
+      });
+  });
+}
+
 function findGroups(day, slot) {
   db.collection("groups/")
     .where("day", "==", day).where("slot", "==", slot)

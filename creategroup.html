@@ -72,23 +72,23 @@
 </head>
 
 <body>
-    <header class="header">
-        <div id="banner">
-          <!-- Nav Button -->
-          <div class='menutop'>
-            <a class='menutop' id="menu" data-toggle="collapse" href="#collapseExample"></a>
-          </div>
-          <!-- Title -->
-          <div id="titleContainer">
-            <div id="title">
-              Create Group
-            </div>
-          </div>
-          <div class='menutop'>
-            <a id="settings" class="menutop" href="./profile.html"></a>
-          </div>
+  <header class="header">
+    <div id="banner">
+      <!-- Nav Button -->
+      <div class='menutop'>
+        <a class='menutop' id="menu" data-toggle="collapse" href="#collapseExample"></a>
+      </div>
+      <!-- Title -->
+      <div id="titleContainer">
+        <div id="title">
+          Create Group
         </div>
-      </header>
+      </div>
+      <div class='menutop'>
+        <a id="settings" class="menutop" href="./profile.html"></a>
+      </div>
+    </div>
+  </header>
   <!-- Nav -->
   <div class="collapse" id="collapseExample">
     <div class="card card-body">
@@ -193,6 +193,13 @@
   <!-- Script file to create  -->
   <script src="./scripts/create_group.js"></script>
   <script src="scripts/sign_out.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#submit').click(function (e) {
+        alert("Group created!");
+      });
+    });
+  </script>
 </body>
 
 </html>
