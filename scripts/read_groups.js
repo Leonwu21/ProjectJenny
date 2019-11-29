@@ -80,7 +80,7 @@ function findGroups(day, slot) {
           e.preventDefault();
           console.log(this.value);
           joinGroup(this.value);
-          alert("Group joined!");
+
         });
       });
     });
@@ -106,7 +106,7 @@ function showGroups() {
           var dayfree = doc.data().day;
           var slotfree = doc.data().slot;
           findGroups(dayfree, slotfree);
-        });
+        })
       });
   });
 
