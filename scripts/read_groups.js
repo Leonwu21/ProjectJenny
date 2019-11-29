@@ -107,7 +107,6 @@ function findGroups(day, slot) {
           e.preventDefault();
           console.log(this.value);
           joinGroup(this.value);
-
         });
       });
     });
