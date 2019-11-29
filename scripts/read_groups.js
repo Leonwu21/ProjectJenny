@@ -9,13 +9,12 @@ function getGroups() {
         // Using onSnapShot() to get groups' IDs that the users are in
         // console the group out
         db.collection("users/").doc(user.uid).collection("groups").onSnapshot(function (d) {
-          d.forEach(function(doc) {
+          d.forEach(function (doc) {
             // console.log(doc.data());
             var groupId = doc.data().groupId;
 
             // Get the group's infos with the group id
-            db.collection("groups").doc(groupId).onSnapshot()
-            .then(function(snap) {
+            db.collection("groups").doc(groupId).onSnapshot(function (snap) {
               var groupName = snap.data().name;
               var groupDay = snap.data().day;
               var groupSlot = snap.data().slot;
@@ -23,7 +22,7 @@ function getGroups() {
 
               console.log("Name: " + groupName);
               console.log("Day: " + groupDay);
-              console.log("Slot: "  + groupSlot);
+              console.log("Slot: " + groupSlot);
               console.log("Course: " + groupCourse);
 
               // TODO the html part 
@@ -111,11 +110,11 @@ function joinGroup(group_id) {
         console.log("Document written with ID: " + snap.id);
         console.log(group_id + "User ID:" + user.uid);
       });
-      
-      // Add group to the the current user's document
-      db.collection("users").doc(user.uid).collection("groups").add({
-        groupId: group_id
-      });
+
+    // Add group to the the current user's document
+    db.collection("users").doc(user.uid).collection("groups").add({
+      groupId: group_id
+    });
   });
 }
 
