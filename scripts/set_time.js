@@ -1,4 +1,6 @@
-//function used in profile.html to set day and time slot
+/**
+ * Set the free slot of the current user to the database.
+ */
 function setTime() {
 
   var userDay = document.getElementById("day").value;

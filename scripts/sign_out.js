@@ -1,3 +1,6 @@
+/**
+ * Function to sign out.
+ */
 function signout() {
   firebase.auth().onAuthStateChanged(function (user) {
     firebase.auth().signOut().then(function () {

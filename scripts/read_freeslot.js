@@ -1,4 +1,6 @@
-//getting the user's free day + slot
+/**
+ * Gets and displays the free slot of the current user in profile.html.
+ */
 function getFreeSlot() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {

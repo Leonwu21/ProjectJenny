@@ -1,4 +1,67 @@
-/* header */
+/* common classes */
+
+/* font sizing */
+.font-3{
+    font-size: 3vmax;
+}
+.font-4{
+    font-size: 4vmax;
+}
+.font-6{
+    font-size: 6vmax;
+}
+.font-7{
+    font-size: 7vmax;
+}
+
+/* flex boxing */
+.flex-spacer{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* sizing */
+
+.h-100p{
+    height: 100%;
+}
+
+.w-100p{
+    width: 100%;
+}
+
+.scale-2{
+    transform: scale(2);
+}
+.scale-4{
+    transform: scale(4);
+}
+
+.w-3mvax{
+    width: 3vmax;
+}
+.w-4mvax{
+    width: 4vmax;
+}
+.h-3mvax{
+    height: 3vmax;
+}
+.h-4mvax{
+    height: 4vmax;
+}
+
+.hw-3vmax{
+    height: 3vmax;
+    width: 3vmax;
+}
+
+/* float */
+
+.float-l{
+    float: left;
+}
+
+/* main */
 
 body {
     margin: 0;
@@ -18,6 +81,8 @@ header {
 strong{
     font-size: 4vmax;
 }
+
+
 
 /* banner items */
 #banner{
@@ -54,13 +119,14 @@ strong{
 
 #links{
     font-size: 3vmax;
+    line-height: normal;
 }
 
 /* maincontent */
 #content {
     height: 90vmax;
     background-color: #2E9CCA;
-    padding: 5vmax;
+    padding: 2vmax;
 }
 
 /* div for welcome message. */
@@ -107,6 +173,8 @@ strong{
   margin-left: 5vmax;
   border-radius: 20px;
 }
+
+
 /* footer */
 /* footer {
     background-color: #25274D;

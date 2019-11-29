@@ -1,12 +1,33 @@
-// Functions to read the groups that the user are currently in
+/**
+ * Gets current groups' IDs that the users are in and display the groups' infos by
+ * groups' IDs.
+ */
 function getGroups() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       firebase.auth().onAuthStateChanged(function (user) {
-        // Using onSnapShot() to get groups id that the users are in
+        // Using onSnapShot() to get groups' IDs that the users are in
         // console the group out
-        db.collection("users/").doc(user.uid).onSnapshot(function (d) {
-          console.log("Current groups: ", d.data()["groups"]);
+        db.collection("users/").doc(user.uid).collection("groups").onSnapshot(function (d) {
+          d.forEach(function (doc) {
+            // console.log(doc.data());
+            var groupId = doc.data().groupId;
+
+            // Get the group's infos with the group id
+            db.collection("groups").doc(groupId).onSnapshot(function (snap) {
+              var groupName = snap.data().name;
+              var groupDay = snap.data().day;
+              var groupSlot = snap.data().slot;
+              var groupCourse = snap.data().course;
+
+              console.log("Name: " + groupName);
+              console.log("Day: " + groupDay);
+              console.log("Slot: " + groupSlot);
+              console.log("Course: " + groupCourse);
+
+              // TODO the html part 
+            });
+          });
         });
       })
     } else {
@@ -15,32 +36,12 @@ function getGroups() {
   });
 }
 
-function showMyGroups() {
-  firebase.auth().onAuthStateChanged(function (user) {
-    db.collection("groups/")
-      .get().then(function (snap) {
-        snap.forEach(function (doc) {
-          groupId = doc.id;
-          findMembers(groupId);
-        });
-      });
-  });
-}
-
-function findMembers(groupId) {
-  firebase.auth().onAuthStateChanged(function (user) {
-    db.collection("groups/").doc(groupId).collection("members/")
-      .get().then(function (snap) {
-        snap.forEach(function (doc) {
-          let userId = doc.data().groupId;
-          if (userId = user.uid) {
-            showGroups();
-          }
-        });
-      });
-  });
-}
-
+/**
+ * Get the groups with the same day and slot of the current user and displays
+ * those groups in .
+ * @param {String} day 
+ * @param {String} slot 
+ */
 function findGroups(day, slot) {
   db.collection("groups/")
     .where("day", "==", day).where("slot", "==", slot)
@@ -69,11 +70,6 @@ function findGroups(day, slot) {
         );
 
         tableDiv.append(tableContent);
-        // let newDiv = $("<div class='group'><div class='groupName'>" + groupName + "</div>\
-        //   <div id='' class='groupTime'>"+ groupDay + " " + groupSlot + "</div>\
-        //   <div id='' class='groupCourse'>"+ groupCourse + "</div>\
-        //   <button type='button' class='joinButton btn btn-primary'>Join Group</button>\
-        //   </div>");
         $("#content").append(tableDiv);
 
         $("td button[value='" + groupId + "']").click(function (e) {
@@ -86,19 +82,10 @@ function findGroups(day, slot) {
     });
 }
 
-function joinGroup(group_id) {
-  firebase.auth().onAuthStateChanged(function (user) {
-    db.collection("groups/").doc(group_id).collection("members").add({
-      groupId: user.uid
-    })
-      .then(function (snap) {
-        console.log("Document written with ID: " + snap.id);
-        console.log(group_id + "User ID:" + user.uid);
-      });
-  });
-}
-
-function showGroups() {
+/**
+ * Get free slots of the current users.
+ */
+function getFreeTime() {
   firebase.auth().onAuthStateChanged(function (user) {
     db.collection("users/").doc(user.uid).collection("freeslot").get()
       .then(function (snap) {
@@ -109,6 +96,25 @@ function showGroups() {
         })
       });
   });
-
-
 }
+
+
+
+function joinGroup(group_id) {
+  firebase.auth().onAuthStateChanged(function (user) {
+    // Add current user to the group document
+    db.collection("groups/").doc(group_id).update({
+      members: firebase.firestore.FieldValue.arrayUnion(user.uid)
+    })
+      // .then(function (snap) {
+      //   console.log("Document written with ID: " + snap.id);
+      //   console.log(group_id + "User ID:" + user.uid);
+      // });
+
+    // Add group to the the current user's document
+    db.collection("users").doc(user.uid).update({
+      groups: firebase.firestore.FieldValue.arrayUnion(group_id)
+    });
+  });
+}
+
