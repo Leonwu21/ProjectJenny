@@ -1,4 +1,6 @@
-// Function that creates a new document in the users collection
+/**
+ * Creates a user document in the users collection.
+ */
 function createUser() {
 
   firebase.auth().onAuthStateChanged(function(user) {

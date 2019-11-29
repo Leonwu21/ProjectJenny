@@ -1,4 +1,6 @@
-// Function to create a new group in the database
+/**
+ * Creates a group and adds it to the database.
+ */
 function createGroup() {
   // user's inputs from the web page
   var groupName = document.getElementById("name").value;
@@ -13,7 +15,6 @@ function createGroup() {
         course: groupCourse,
         day: groupDay,
         slot: groupSlot,
-        members: firebase.firestore.FieldValue.arrayUnion(user.uid)
       });
     } else {
       console.log("Not login");
