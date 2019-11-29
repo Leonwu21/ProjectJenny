@@ -57,6 +57,11 @@
     .joinButton {
       font-size: 3vmax;
     }
+
+    #footer {
+      background-color: #25274D;
+      color: white;
+    }
   </style>
 </head>
 
@@ -135,6 +140,13 @@
 
   </div>
 
+  <footer>
+    <div id="footer">
+      <p style="text-align: center; font-size: 3vmax;">Can't find what you're looking for?</p>
+      <a style="display: block; text-align: center; font-size: 3vmax;" href="creategroup.html">Create your own
+        group!</a>
+    </div>
+  </footer>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -150,11 +162,7 @@
 
   <script src="scripts/read_groups.js"></script>
   <script src="scripts/sign_out.js"></script>
-  <!-- <script src="scripts/join_group.js"></script> -->
   <script>
-    // figure out which groups match profile slots
-    // assign matches to an array
-    // loop through array and create divs programmatically
     showGroups();
   </script>
 </body>
