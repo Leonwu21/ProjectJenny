@@ -7,6 +7,12 @@
 .font-4{
     font-size: 4vmax;
 }
+.font-6{
+    font-size: 6vmax;
+}
+.font-7{
+    font-size: 7vmax;
+}
 
 /* flex boxing */
 .flex-spacer{
