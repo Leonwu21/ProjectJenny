@@ -20,6 +20,7 @@ function getGroups() {
               var groupSlot = snap.data().slot;
               var groupCourse = snap.data().course;
 
+              // need to look for groups that are already joined
               console.log("Name: " + groupName);
               console.log("Day: " + groupDay);
               console.log("Slot: " + groupSlot);
@@ -106,10 +107,10 @@ function joinGroup(group_id) {
     db.collection("groups/").doc(group_id).update({
       members: firebase.firestore.FieldValue.arrayUnion(user.uid)
     })
-      // .then(function (snap) {
-      //   console.log("Document written with ID: " + snap.id);
-      //   console.log(group_id + "User ID:" + user.uid);
-      // });
+    // .then(function (snap) {
+    //   console.log("Document written with ID: " + snap.id);
+    //   console.log(group_id + "User ID:" + user.uid);
+    // });
 
     // Add group to the the current user's document
     db.collection("users").doc(user.uid).update({
