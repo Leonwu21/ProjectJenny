@@ -103,17 +103,17 @@ function getFreeTime() {
 function joinGroup(group_id) {
   firebase.auth().onAuthStateChanged(function (user) {
     // Add current user to the group document
-    db.collection("groups/").doc(group_id).collection("members").add({
-      memberId: user.uid
+    db.collection("groups/").doc(group_id).update({
+      members: firebase.firestore.FieldValue.arrayUnion(user.uid)
     })
-      .then(function (snap) {
-        console.log("Document written with ID: " + snap.id);
-        console.log(group_id + "User ID:" + user.uid);
-      });
+      // .then(function (snap) {
+      //   console.log("Document written with ID: " + snap.id);
+      //   console.log(group_id + "User ID:" + user.uid);
+      // });
 
     // Add group to the the current user's document
-    db.collection("users").doc(user.uid).collection("groups").add({
-      groupId: group_id
+    db.collection("users").doc(user.uid).update({
+      groups: firebase.firestore.FieldValue.arrayUnion(group_id)
     });
   });
 }
