@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="styles/templatelayout2.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  
+
   <style>
     #profilePic {
       height: 10vmax;
@@ -54,7 +54,7 @@
       font-weight: bold;
     }
 
-    #userName{
+    #userName {
       height: 100%;
       display: table-cell;
       vertical-align: middle;
@@ -138,10 +138,12 @@
     <div class="card border-primary">
       <div id="namePic">
         <img id="profilePic" class="card-img-top" src="resources/icons/profile.png" alt="Profile picture">
-        <div class="card-title"><span id="userName">Name</span></div>
+        <div class="card-title"><span id="userName">Name</span>
+          <span id="edit" style="cursor:pointer">Edit Profile button</span>
+        </div>
       </div>
 
-      <div class="card-body font-l">
+      <div id="divContent" class="card-body font-l">
         <p class="card-text"><span id="userBio">Bio Info Here</span></p>
         <div id="userInfo" class="card-text">
           Courses
@@ -175,6 +177,13 @@
   <script src="scripts/sign_out.js"></script>
   <script src="scripts/read_freeslot.js"></script>
   <script>
+    $(document).ready(function () {
+      $("#edit").click(function () {
+        var divForm = $("<div id='formContainer'></div");
+        $("#divContent").prepend(divForm);
+        $("#formContainer").css("height", "60vmax");
+      });
+    });
     getGroups();
     showName();
     getFreeSlot();
