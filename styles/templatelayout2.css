@@ -36,6 +36,12 @@
 .scale-4{
     transform: scale(4);
 }
+.scale-6{
+    transform: scale(6);
+}
+.scale-8{
+    transform: scale(8);
+}
 
 .w-3mvax{
     width: 3vmax;
@@ -66,6 +72,7 @@
 body {
     margin: 0;
     background-color: #2E9CCA;
+    font-family: monospace;
 }
 
 header {
