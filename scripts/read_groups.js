@@ -37,16 +37,17 @@ function getGroups() {
             // console.log("Course: " + groupCourse);
 
             $(document).ready(function () {
-              let box = $("<div id='box'></div>");
-              let name = $("<span id='name' class='span'>" + groupName + "</span>");
-              let time = $("<span id='time' class='span'>" + groupDay + ",&nbsp;" + timeSlot + "</span>");
-              let course = $("<span id='course' class='span'>" + groupCourse + "</span>");
+              let card = $("<div class='card'>\
+              <div class='card-body'>\
+                <h4 class='card-title font-3' id='name'>"+ groupName + "</h4>\
+                <p class='card-text font-3' id='time'>"+ groupDay.charAt(0).toUpperCase() + groupDay.substring(1) + " " + timeSlot   + "</p>\
+                <p class='card-text font-3' id='course'>"+ groupCourse + "</p>\
+              </div>\
+            </div>")
 
-              $("#content").append(box);
-              $(box).append(name);
-              $(box).append(time);
-              $(box).append(course);
-              
+              // tableDiv.append(tableContent);
+              $("#groups").append(card);
+
             });
 
           });
@@ -94,7 +95,7 @@ function findGroups(day, slot) {
         let card = $("<div class='card'>\
               <div class='card-body'>\
                 <h4 class='card-title font-3' id='name'>"+ groupName + "</h4>\
-                <p class='card-text font-3' id='time'>" + groupDay.charAt(0).toUpperCase() + groupDay.substring(1) +"</p>\
+                <p class='card-text font-3' id='time'>" + groupDay.charAt(0).toUpperCase() + groupDay.substring(1) + "</p>\
                 <p class='card-text font-3' id='course'>"+ groupCourse + "</p>\
                 <button type='button' value='" + groupId + "' class='joinButton btn btn-primary'>Join Group</button>\
               </div>\
@@ -108,7 +109,7 @@ function findGroups(day, slot) {
           console.log(this.value);
           joinGroup(this.value);
           $(this).hide();
-          
+
         });
       });
     });
