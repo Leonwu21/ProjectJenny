@@ -21,6 +21,17 @@
       float: left;
     }
   </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="styles/templatelayout.css" /> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/templatelayout2.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
   <!-- Firebase Data -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
@@ -180,7 +191,41 @@
     $(document).ready(function () {
       $("#edit").click(function () {
         var divForm = $("<div id='formContainer'></div");
+        var form = $("<form id='form'></form>");
+        var formGroup = $("<div class='form-group'></div>");
+        var labelDay = $("<label for='day' class='col-sm-2 col-form-label'>Day:</label>");
+        var select1 = $("<select class='form-control' name='Day' id='day'></select>");
+        var optionMon = $("<option value='monday'>Monday</option>");
+        var optionTue = $("<option value='tuesday'>Tuesday</option>");
+        var optionWed = $("<option value='wednesday'>Wednesday</option>");
+        var optionThu = $("<option value='thursday'>Thursday</option>");
+        var optionFri = $("<option value='friday'>Friday</option>");
+        var labelTime = $("<label for='time' class='col-sm-2 col-form-label'>Time:</label>");
+        var select2 = $("<select class='form-control' name='Time' id='time'></select");
+        var option1 = $("<option value='1'>10AM - 12PM</option>");
+        var option2 = $("<option value='2'>12PM - 2PM</option>");
+        var option3 = $("<option value='3'>2PM - 4PM</option>");
+        var option4 = $("<option value='4'>4PM - 6PM</option>");
+        var submit = $("<input type='submit' value='save'></input>");
+
         $("#divContent").prepend(divForm);
+        $(divForm).append(form);
+        $(form).append(formGroup);
+        $(formGroup).append(labelDay);
+        $(formGroup).append(select1);
+        $(select1).append(optionMon);
+        $(select1).append(optionTue);
+        $(select1).append(optionWed);
+        $(select1).append(optionThu);
+        $(select1).append(optionFri);
+        $(formGroup).append(labelTime);
+        $(formGroup).append(select2);
+        $(select2).append(option1);
+        $(select2).append(option2);
+        $(select2).append(option3);
+        $(select2).append(option4);
+        $(form).append(submit);
+
         $("#formContainer").css("height", "60vmax");
       });
     });
