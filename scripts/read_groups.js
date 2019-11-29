@@ -46,7 +46,7 @@ function getGroups() {
               $(box).append(name);
               $(box).append(time);
               $(box).append(course);
-
+              
             });
 
           });
@@ -91,8 +91,17 @@ function findGroups(day, slot) {
           </tr>"
         );
 
-        tableDiv.append(tableContent);
-        $("#content").append(tableDiv);
+        let card = $("<div class='card'>\
+              <div class='card-body'>\
+                <h4 class='card-title font-3' id='name'>"+ groupName + "</h4>\
+                <p class='card-text font-3' id='time'>" + groupDay.charAt(0).toUpperCase() + groupDay.substring(1) +"</p>\
+                <p class='card-text font-3' id='course'>"+ groupCourse + "</p>\
+                <button type='button' value='" + groupId + "' class='joinButton btn btn-primary'>Join Group</button>\
+              </div>\
+            </div>")
+
+        // tableDiv.append(tableContent);
+        $("#groups").append(card);
 
         $("td button[value='" + groupId + "']").click(function (e) {
           e.preventDefault();
@@ -137,6 +146,8 @@ function joinGroup(group_id) {
     db.collection("users").doc(user.uid).update({
       groups: firebase.firestore.FieldValue.arrayUnion(group_id)
     });
+
+
   });
 }
 
