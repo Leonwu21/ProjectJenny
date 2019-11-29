@@ -15,7 +15,7 @@ function createGroup() {
         course: groupCourse,
         day: groupDay,
         slot: groupSlot,
-        members: firebase.firestore.FieldValue.arrayUnion(user.uid)
+        members: [user.uid]
       });
     } else {
       console.log("Not login");
