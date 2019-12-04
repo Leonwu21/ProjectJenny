@@ -10,39 +10,56 @@ $(document).ready(function () {
 
 
 // Global Variables
-var progress = 0;
+var progress = 1;
 
 function progressBar() {
     
     $('#nextProfDat').click(function () {
         console.log("Clicked");
-        ++progress;
+        
         $('#prof-progress div').css("width", 20 * progress + "%");
+        switch (progress) {
+            case 1:
+                setTime("monday");
+                break;
+            case 2:
+                setTime("tuesday");
+                break;
+            case 3:
+                setTime("wednesday");
+                break;
+            case 4:
+                setTime("thursday");
+                break;
+            case 5:
+                setTime("friday");
+                break;
+            case 6:
+                location.href = "./index.html";
+                break;
+        }
+        ++progress;
+
         switch (progress) {
             case 1:
                 $('#day').text("Monday");
                 $('#currentDay').text("Monday");
-                setTime("monday");
                 break;
             case 2:
                 $('#day').text("Tuesday");
                 $('#currentDay').text("Tuesday");
-                setTime("tuesday");
                 break;
             case 3:
                 $('#day').text("Wednesday");
                 $('#currentDay').text("Wednesday");
-                setTime("wednesday");
                 break;
             case 4:
                 $('#day').text("Thursday");
                 $('#currentDay').text("Thursday");
-                setTime("thursday");
                 break;
             case 5:
                 $('#day').text("Friday");
                 $('#currentDay').text("Friday");
-                setTime("friday");
                 break;
             case 6:
                 location.href = "./index.html";
