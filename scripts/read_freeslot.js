@@ -10,7 +10,7 @@ function getFreeSlot() {
           snap.forEach(function (doc) {
             var day = doc.data().day;
             var slot = doc.data().slot;
-            var time;
+            var time = "";
 
             switch (slot) {
               case "1": time = "10AM - 12PM";
@@ -20,6 +20,7 @@ function getFreeSlot() {
               case "3": time = "2PM - 4PM";
                 break;
               case "4": time = "4PM - 6PM";
+              break;
             }
             var li = document.createElement("li");
             li.innerHTML = "" +  day.charAt(0).toUpperCase() + day.substring(1) + ",&nbsp;" + time;

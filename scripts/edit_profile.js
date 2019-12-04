@@ -61,17 +61,20 @@ function unCheck() {
 function setTime(dayval) {
     firebase.auth().onAuthStateChanged(function (user) {
         var datab = db.collection("users").doc(user.uid).collection("freeslot");
-        var schedule = [];
         for (let i = 1; i < 5; i++) {
             if ($("#check" + i).prop("checked") == true) {
                 console.log("sched added");
-                schedule.push(i);
+                datab.doc(dayval + i).set({
+                    day : dayval,
+                    slot : "" + i
+                })
+            }else{
+                datab.doc(dayval + i).delete()
+                console.log("" + dayval + i + ": deleted")
             }
 
         }
-        datab.doc(dayval).set({
-            slots : schedule
-        })
+        
         unCheck();
     });
     
