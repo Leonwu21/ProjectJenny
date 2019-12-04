@@ -10,15 +10,14 @@ $(document).ready(function () {
 
 
 // Global Variables
-var progress = 1;
+var progress = 0;
 
 function progressBar() {
-    deleteSched()
+    
     $('#nextProfDat').click(function () {
         console.log("Clicked");
         ++progress;
         $('#prof-progress div').css("width", 20 * progress + "%");
-        
         switch (progress) {
             case 1:
                 $('#day').text("Monday");
@@ -62,25 +61,25 @@ function unCheck() {
 function setTime(dayval) {
     firebase.auth().onAuthStateChanged(function (user) {
         var datab = db.collection("users").doc(user.uid).collection("freeslot");
+        var schedule = [];
         for (let i = 1; i < 5; i++) {
             if ($("#check" + i).prop("checked") == true) {
-                console.log("It went in");
-                datab.add({
-                    day: dayval,
-                    slot: "" + i
-                }).then(function(){
-                    unCheck();
-                });
+                console.log("sched added");
+                schedule.push(i);
             }
 
         }
+        datab.doc(dayval).set({
+            slots : schedule
+        })
+        unCheck();
     });
     
 }
 
 function deleteSchedule(){
     firebase.auth().onAuthStateChanged(function (user) {
-        var datab = db.collection("users").doc(user.uid).collection("freeslot").get()
+        db.collection("users").doc(user.uid).collection("freeslot").get()
         .then(function (snap){
             snap.forEach(function (doc){
                 deleteSched(doc.id)
