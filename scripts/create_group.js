@@ -19,9 +19,14 @@ function createGroup() {
         members: [user.uid]
       })
       .then(function (docRef) {
+        console.log("finished  adding  group");
         // Add group to the the current user's document
         db.collection("users").doc(user.uid).update({
           groups: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+        })
+        .then(function(){
+          console.log("finished  updating to users ");
+          window.location.href  =  "mygroups.html";
         });
       });
 
