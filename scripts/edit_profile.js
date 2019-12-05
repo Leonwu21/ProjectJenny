@@ -17,7 +17,7 @@ function progressBar() {
     $('#nextProfDat').click(function () {
         console.log("Clicked");
         
-        $('#prof-progress div').css("width", 20 * progress + "%");
+        
         switch (progress) {
             case 1:
                 setTime("monday");
@@ -39,7 +39,7 @@ function progressBar() {
                 break;
         }
         ++progress;
-
+        $('#prof-progress div').css("width", 20 * progress + "%");
         switch (progress) {
             case 1:
                 $('#day').text("Monday");
