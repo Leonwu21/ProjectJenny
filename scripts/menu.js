@@ -1,3 +1,6 @@
+/**
+ * For the menu hamburger.
+ */
 $(document).ready(function () {
     // events
     var menuAnimationSlideIn = {

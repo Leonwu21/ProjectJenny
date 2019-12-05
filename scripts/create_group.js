@@ -8,18 +8,26 @@ function createGroup() {
   var groupDay = document.getElementById("day").value;
   var groupSlot = document.getElementById("time").value;
 
-  firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+      // Add group to the groups collection
       db.collection("groups").add({
         name: groupName,
         course: groupCourse,
         day: groupDay,
         slot: groupSlot,
         members: [user.uid]
+      })
+      .then(function (docRef) {
+        // Add group to the the current user's document
+        db.collection("users").doc(user.uid).update({
+          groups: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+        });
       });
+
     } else {
       console.log("Not login");
     }
   });
-  
+
 }
