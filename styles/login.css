@@ -1,9 +1,19 @@
 #content {
-    padding-top: 10vmax;
-  }
+  padding-top: 10vmax;
+}
 
-  #signUp {
-    text-align: center;
-    font-size: 4vmax;
-    color: white;
-  }
+#signUp {
+  text-align: center;
+  font-size: 4vmax;
+  color: white;
+}
+
+#firebaseui-auth-container{
+  height: 100%;
+  width: 100%;
+}
+
+form {
+  height: 100%;
+  width: 100%;
+}
