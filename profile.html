@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- <link rel="stylesheet" type="text/css" href="styles/templatelayout.css" /> -->
@@ -18,7 +18,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+  </script>
 
   <!-- Firebase Data -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -38,11 +38,15 @@
   <!-- Boostrap Data -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+  </script>
   <link rel="stylesheet" type="text/css" href="styles/profile.css" />
 </head>
 
 <body>
+  <!-- contains the following controls
+        hamburger menu
+        title
+        profile -->
   <header class="header">
     <div id="banner">
       <!-- Nav Button -->
@@ -65,11 +69,9 @@
     <div class="card card-body">
       <nav>
         <ul id="links" class="navbar-nav mr-auto">
-          <!-- LINK ITEM -->
           <li class="nav-item active">
             <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
           </li>
-          <!-- LINK ITEM -->
           <li class="nav-item">
             <a class="nav-link" href="./profile.html">Profile</a>
           </li>
@@ -91,7 +93,6 @@
 
   <div id="content">
 
-
     <div class="card border-primary">
       <div id="namePic">
         <img id="profilePic" class="card-img-top" src="resources/icons/profile.png" alt="Profile picture">
@@ -103,7 +104,7 @@
       <div id="divContent" class="card-body font-l">
         <p class="card-text"><span id="userBio">Bio Info Here</span></p>
         <div id="userInfo" class="card-text">
-          Courses
+          Courses [W.I.P.]
           <ul id="Courses">
             <li>COMP 1510</li>
             <li>COMP 1536</li>
@@ -127,18 +128,17 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="scripts/sign_out.js"></script>
   <script src="scripts/read_freeslot.js"></script>
   <script src="scripts/set_time.js"></script>
   <script>
-
     getGroups();
     showName();
     getFreeSlot();
