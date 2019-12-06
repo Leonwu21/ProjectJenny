@@ -2,9 +2,18 @@ $(document).ready(function () {
 
     $('#day').text("Monday");
     $('#currentDay').text("Monday");
-    
+
     progressBar()
 
+    for (let i = 1; i < 5; i++) {
+        $("#list" + i).click(function () {
+            if ($("#check" + i).prop("checked") == true) {
+                $("#list" + i).css("background-color", "#ddf");
+            } else {
+                $("#list" + i).css("background-color", "#fff");
+            }
+        })
+    }
 });
 
 
@@ -13,11 +22,11 @@ $(document).ready(function () {
 var progress = 1;
 
 function progressBar() {
-    
+
     $('#nextProfDat').click(function () {
         console.log("Clicked");
-        
-        
+
+
         switch (progress) {
             case 1:
                 setTime("monday");
@@ -72,6 +81,7 @@ function unCheck() {
     for (let i = 1; i < 5; i++) {
         // let chkbx = $("#check" + i);
         document.getElementById("check" + i).checked = false;
+        $("#list" + i).css("background-color", "#fff");
     }
 }
 
@@ -82,39 +92,39 @@ function setTime(dayval) {
             if ($("#check" + i).prop("checked") == true) {
                 console.log("sched added");
                 datab.doc(dayval + i).set({
-                    day : dayval,
-                    slot : "" + i
+                    day: dayval,
+                    slot: "" + i
                 })
-            }else{
+            } else {
                 datab.doc(dayval + i).delete()
                 console.log("" + dayval + i + ": deleted")
             }
 
         }
-        
+
         unCheck();
     });
-    
+
 }
 
-function deleteSchedule(){
+function deleteSchedule() {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).collection("freeslot").get()
-        .then(function (snap){
-            snap.forEach(function (doc){
-                deleteSched(doc.id)
+            .then(function (snap) {
+                snap.forEach(function (doc) {
+                    deleteSched(doc.id)
+                })
             })
-        })
 
     })
 }
 
-function deleteSched(schedId){
+function deleteSched(schedId) {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).collection("freeslot").doc(schedId).delete()
-        .then(function(){
-            console.log("data deleted");
-        })
+            .then(function () {
+                console.log("data deleted");
+            })
     })
 }
 
