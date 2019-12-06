@@ -15,6 +15,11 @@
 </head>
 
 <body>
+  <!-- contains the following controls
+        hamburger menu
+        title
+        profile -->
+
     <header class="header">
         <div id="banner">
           <!-- Nav Button -->
@@ -32,16 +37,16 @@
           </div>
         </div>
       </header> 
-  <!-- Nav -->
+
+  <!-- collapsing navigation bar -->
+
   <div class="collapse" id="collapseExample">
     <div class="card card-body">
       <nav>
         <ul class="navbar-nav mr-auto">
-          <!-- LINK ITEM -->
           <li class="nav-item active">
             <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
           </li>
-          <!-- LINK ITEM -->
           <li class="nav-item">
             <a class="nav-link" href="./profile.html">Profile</a>
           </li>
@@ -51,49 +56,15 @@
           <li class="nav-item">
             <a class="nav-link" href="./findgroups.html">Find Groups</a>
           </li>
-          <!-- DROPDOWN
-               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li> 
-    
-               Disabled Button 
-    
-               <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li> -->
         </ul>
-        <!--<form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>-->
       </nav>
     </div>
   </div>
 
   <!-- Place content here -->
+
   <div id='content'>
-    <!--add action once database is established
-    <div id="divForm"> -->
-    <!-- <form>
-        <input type="text" name="Username" placeholder="Username" required="required" />
-        <input type="email" name="email" placeholder="Email" required="required" />
-        <input type="password" name="password" placeholder="Password" required="required"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
-        <input type="password" name="password" placeholder="Confirm Password" required="required"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
-        <br />
-        <input type="submit" value="Sign Up">
-      </form> -->
+
     <form class="form-horizontal" method="POST">
       <div class="control-group">
         <!-- Username -->
@@ -142,6 +113,7 @@
   </div>
 
   <!-- Optional JavaScript -->
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
