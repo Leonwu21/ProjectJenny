@@ -1,0 +1,13 @@
+#signUp {
+    font-size: 4vmax;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #divForm {
+    padding: 10vmax 30vmax;
+  }
+
+  input {
+    margin-top: 5vmax;
+  }

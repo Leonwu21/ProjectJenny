@@ -1,0 +1,31 @@
+.group {
+    display: flex;
+    justify-content: space-between;
+    height: 10vmax;
+    background-color: rgb(209, 229, 238);
+    padding: 2vmax;
+    font-size: 3vmax;
+  }
+
+  .groupName {
+    float: left;
+  }
+
+  .groupCourse {
+    display: flex;
+    justify-content: center;
+  }
+
+  .groupTime {
+    float: right;
+
+  }
+
+  .joinButton {
+    font-size: 3vmax;
+  }
+
+  #footer {
+    background-color: #25274D;
+    color: white;
+  }

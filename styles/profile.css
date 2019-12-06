@@ -1,0 +1,73 @@
+#profilePic {
+    height: 10vmax;
+    width: 10vmax;
+    margin: 3vmax;
+    object-fit: cover;
+    padding: 2vmax;
+    display: inline-block;
+    background-color: #29648A;
+    border-radius: 10%;
+
+}
+
+#userName {
+    font-size: 5vmax;
+}
+
+.font-l {
+    font-size: 3vmax;
+}
+
+#namePic {
+    font-weight: bold;
+}
+
+#userName {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input[type=submit] {
+    border-radius: 10px;
+    background-color: #29648A;
+    border-color: #29648A;
+    color: white;
+    padding: 2vmax;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    font-size: 3vmax;
+    margin-bottom: 3vmax;
+}
+
+#day {
+    margin-bottom: 10vmax;
+}
+
+#time {
+    margin-bottom: 10vmax;
+}
+
+#submitButton {
+    display: flex;
+    justify-content: center;
+
+}
+
+#submit {
+    border-radius: 10px;
+    background-color: #29648A;
+    border-color: #29648A;
+    color: white;
+}
+
+#loading {
+    height: 5vmax;
+    width: 5vmax;
+}
+
+#freeSlots {
+    text-align: center;
+}
